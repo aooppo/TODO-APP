@@ -1,11 +1,13 @@
 import React from 'react'
+import { Button } from 'antd'
 const Link = ({ active, children, onClick }) => (
-    <button
+    <Button
+        type="primary"
         onClick={onClick}
         disabled={active}
         style={{marginLeft: '4px'}}
     >
         {children}
-    </button>
+    </Button>
 )
 export default Link

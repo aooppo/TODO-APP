@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Button, Input, Form } from 'antd'
 import { addTodo } from '../actions'
 
 
@@ -7,22 +8,22 @@ const AddTodo = ({dispatch}) => {
   let input  
   return (
     <div>
-        <form onSubmit={
+        <Form onSubmit={
             (e) => {
                 e.preventDefault()
-                if(!input.value.trim()) {
-                    alert('cannot input empty string.')
+                if(!input.input.value) {
+                    console.log(input.input.value)
                     return
                 }
-                dispatch(addTodo(input.value))
-                input.value = ''
+                dispatch(addTodo(input.input.value))
+                input.input.value = ''
             }
         }>
-            <input ref={node => input = node} />
-            <button>
+            <Input ref={node => input = node} size="default" />
+            <Button type="primary" htmlType="submit">
                 Add TODO
-            </button>
-        </form>
+            </Button>
+        </Form>
       </div>
     )
 }
