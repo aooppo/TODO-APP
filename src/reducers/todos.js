@@ -14,6 +14,8 @@ const todos = (state = [], action) => {
                   ? {...todo, completed: !todo.completed}
                   : todo
             )
+        case 'DELETE_TODO':
+            return [...state.filter(t => t.id !== action.id)]
         default:
             return state    
     }

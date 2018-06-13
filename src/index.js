@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 import rootReducer from './reducers'
 import App from './components/App'
 
-import 'antd/dist/antd.css'
+
 
 const store = createStore(rootReducer)
 
